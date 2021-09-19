@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 export const GridSlider = ({genre}) => {
     const title = genre;
     const [movies, setMovies] = useState([]);
-    const api =`https://yts.mx/api/v2/list_movies.json?genre=${genre}&limit=10`
+    const api =`https://yts.mx/api/v2/list_movies.json?genre=${genre}&limit=10&sort_by=rating`
     
     const fetchMovie = () => {
         axios.get(api)

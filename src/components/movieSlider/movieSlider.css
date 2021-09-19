@@ -1,0 +1,22 @@
+.movie__slider {
+  margin: 2em 17em;
+  display: grid;
+  grid-template-columns: 3.5em auto 3.5em;
+  column-gap: 2em;
+}
+
+.slides__movie {
+  height: 45em;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slide__movie {
+  height: 45em;
+  background-size: cover;
+}
+
+button {
+  height: 5em;
+  margin-top: 22.5em;
+}
