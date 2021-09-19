@@ -1,0 +1,33 @@
+.slider {
+  margin: 2em 24em;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__slider {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: 70em;
+  column-gap: 2em;
+  row-gap: 2em;
+  overflow-y: hidden;
+  margin-top: 1em;
+}
+
+.grid__slider::-webkit-scrollbar {
+  display: none;
+}
+
+.interact__slider {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em 3em;
+}
+
+.nav__slider {
+  color: #aecfdf;
+}
+
+.title__slider {
+  font-size: 1.5em;
+}

@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 5em;
+  background-color: #050505;
+  color: #aecfdf;
+  height: 1.2em;
+}
+
+.nav__header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3em;
+  list-style: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.list__nav:hover {
+  color: #004fff;
+}
+
+.genre__dropDown {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #050505;
+  margin-top: 1.8em;
+  margin-left: -3em;
+}
+
+.list__genre {
+  padding: 1em 1em;
+}
+
+.list__genre:hover {
+  color: #aecfdf;
+}
+
+.dropDown__nav:hover > ul {
+  display: block;
+}

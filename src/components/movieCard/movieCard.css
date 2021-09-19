@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.movieCard {
+  height: 24em;
+  width: 16em;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.movieCard:hover > article {
+  background: rgba(22, 39, 37, 0.7);
+  display: flex;
+}
+
+.card {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content__card {
+  padding: 0 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  opacity: 1;
+}
+
+.button__content {
+  margin-bottom: 1em;
+  height: 2.3em;
+  background-color: #35605a;
+  border: 1px solid #35605a;
+  border-radius: 2px;
+  color: white;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.button__content:hover {
+  background-color: white;
+  border: 1px solid white;
+  color: #004fff;
+}
