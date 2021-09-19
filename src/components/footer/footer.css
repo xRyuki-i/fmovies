@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 5em;
+  background-color: #050505;
+  color: #aecfdf;
+  height: fit-content;
+}
+
+.menu__footer {
+  display: flex;
+}
+
+.content__menu {
+  margin: 1em 5em;
+}

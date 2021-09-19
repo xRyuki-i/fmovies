@@ -32,7 +32,6 @@ export const GridSlider = ({genre}) => {
             <div className="grid__slider">
                 {
                     movies.map((item, index)=>{
-                        console.log(item);
                         return < MovieCard key={item.id} movie={item}/>
                     })
                 }

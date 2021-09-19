@@ -41,25 +41,25 @@ export const MovieSlider = () => {
                 <img src="./left.png" alt="arrow" />
             </button>
 
-            <div className="slides__movie">
+            <div className="slides__movie" >
                 {
                     movies.map((item, index) => {
                         return (
-                            <div key={item.id}>
+                            <div>
                                 {   index === current &&
                                     (
                                         <div 
                                             className="slide__movie"
-                                            key={item.id}
                                             style={{backgroundImage: `url(${item.background_image})`}}
+                                            key = {index}
                                         >
                                             <article className="detail__slide">
                                                 <h3>{item.title}</h3>
                                                 <p>Rating: {item.rating}</p>
                                                 <p>Duration: {item.runtime}min</p>
                                                 <ul className="genre__slide">Genre: {
-                                                    (item.genres).map(genre => {
-                                                        return <li className="list__genre">{genre}</li>
+                                                    (item.genres).map((genre,index) => {
+                                                        return <li className="list__genre" key={index}>{genre}</li>
                                                     })
                                                 }
                                                 </ul>

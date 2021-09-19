@@ -21,7 +21,12 @@
   font-weight: bold;
 }
 
-.list__nav:hover {
+.header a {
+  text-decoration: none;
+  color: #aecfdf;
+}
+
+.list__nav a:hover {
   color: #004fff;
 }
 

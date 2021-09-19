@@ -49,3 +49,12 @@
   border: 1px solid white;
   color: #004fff;
 }
+
+.button--remove {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.button--remove:hover {
+  color: red;
+}

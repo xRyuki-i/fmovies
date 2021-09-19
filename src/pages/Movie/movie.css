@@ -84,3 +84,19 @@ h3 {
   column-gap: 2em;
   margin-top: 1em;
 }
+
+.download__movie {
+  background: #35605a;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+.download__movie {
+  color: white;
+}
+
+.download__movie a {
+  text-decoration: none;
+  color: #aecfdf;
+}

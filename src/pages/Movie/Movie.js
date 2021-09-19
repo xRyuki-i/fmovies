@@ -5,12 +5,14 @@ import { useHistory } from 'react-router';
 import { useState, useEffect } from 'react'
 import { MovieCard } from '../../components/movieCard/MovieCard';
 import { Header } from '../../components/header/Header';
+import { Footer } from '../../components/footer/Footer';
 
 export const Movie = () => {
 
     const history = useHistory();
     const data = history.location.state;
 
+    const [localKeys, setLocalKeys] = useState(Object.keys(localStorage));
     const [movies, setMovies] = useState([]);
     const api =`https://yts.mx/api/v2/movie_suggestions.json?movie_id=${data.id}`
     
@@ -25,10 +27,16 @@ export const Movie = () => {
         })
     }
 
+    const addToList = () => {
+        localStorage.setItem(+(data.id), JSON.stringify(data));
+        setLocalKeys(Object.keys(localStorage));
+    }
+
     useEffect(()=>{
         fetchMovie();
-    },[])
+    },[localKeys])
 
+    
     return (
         <>
             <Header />
@@ -59,8 +67,8 @@ export const Movie = () => {
                         <p>{data.description_full}</p>
 
                         <div className="buttons__info">
-                            <button className="button">
-                                Add to WatchList
+                            <button className="button" onClick={addToList}>
+                                { localKeys.includes((data.id).toString())? "Added to WatchList" : "Add to WatchList"}
                             </button>
                             <button className="button">
                                 Mark as Watched
@@ -69,16 +77,26 @@ export const Movie = () => {
                     </div>      
                 </article>
 
+                <div className="download__movie">
+                    <p>Download</p>
+                    {
+                        data.torrents.map((torrent, index) => {
+                            return <a href={torrent.url} className="link__torrent" key={index}>{torrent.quality},{torrent.size}</a>
+                        })
+                    }
+                </div>
+
                 <h3 style={{marginTop : `1em`}}>You May Also Like</h3>            
                 <div className="related__movie">
                     {
                         movies.map(item=>{
-                            console.log(item);
                             return < MovieCard movie={item}/>
                         })
                     }
                 </div>
             </section>
+
+            <Footer />
         </>
     )
 }

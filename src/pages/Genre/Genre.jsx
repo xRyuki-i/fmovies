@@ -5,6 +5,7 @@ import { MovieCard } from '../../components/movieCard/MovieCard';
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom';
+import { Footer } from '../../components/footer/Footer';
 
 export const Genre = () => {
 
@@ -37,11 +38,13 @@ export const Genre = () => {
                     {
                         movies.map(item=>{
                             console.log(item);
-                            return < MovieCard movie={item}/>
+                            return < MovieCard movie={item} watchList={false}/>
                         })
                     }
                 </div>
             </section>
+
+            <Footer />
         </>
     )
 }
