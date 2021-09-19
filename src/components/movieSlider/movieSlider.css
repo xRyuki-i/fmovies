@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 3.5em auto 3.5em;
   column-gap: 2em;
+  color: white;
 }
 
 .slides__movie {
@@ -16,7 +17,27 @@
   background-size: cover;
 }
 
-button {
+.genre__slide {
+  list-style: none;
+  display: flex;
+}
+
+.detail__slide {
+  height: 100%;
+  padding: 0em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.detail__slide:hover {
+  background-color: rgba(22, 39, 37, 0.7);
+}
+
+.button__slider {
   height: 5em;
   margin-top: 22.5em;
+  background-color: #aecfdf;
+  border: 1px solid #aecfdf;
+  border-radius: 5px;
 }

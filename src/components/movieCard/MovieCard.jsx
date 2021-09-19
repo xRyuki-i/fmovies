@@ -1,13 +1,15 @@
 import React from 'react'
 import './movieCard.css';
+import { useHistory } from 'react-router';
 
 
 
-export const MovieCard = (movie) => {
-    const data = movie.movie;
+export const MovieCard = ({movie}) => {
+    const history = useHistory(); 
+    const data = movie;
 
     const handleClick = () => {
-        console.log(data);
+        history.push("/movie", data)
     }
 
     return (

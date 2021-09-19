@@ -1,8 +1,9 @@
 import React from 'react'
 import './gridSlider.css'
-import { MovieCard } from '../movieCard/MovieCard';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 import { useState, useEffect } from 'react'
+import { MovieCard } from '../movieCard/MovieCard';
 
 export const GridSlider = ({genre}) => {
     const title = genre;
@@ -38,7 +39,9 @@ export const GridSlider = ({genre}) => {
             </div>
 
             <div className="interact__slider">
-                <label className="nav__slider">See more</label>
+                <label className="nav__slider">
+                    <Link to={`./genre/${title}`}>See more</Link>
+                </label>
             </div>
             
         </section>

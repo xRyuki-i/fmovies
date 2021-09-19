@@ -6,14 +6,17 @@ import { Genre } from './pages/Genre/Genre'
 import { Movie } from './pages/Movie/Movie';
 import { GridSlider } from './components/gridSlider/GridSlider';
 import { MovieSlider } from './components/movieSlider/MovieSlider';
+import { MovieCard } from './components/movieCard/MovieCard';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
 
   return (
-    <>
-      <Header />
-     <MovieSlider />
-    </>
+    <Router>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/genre/:title" component={Genre} />
+        <Route exact path="/movie" component={Movie} />
+      </Router>
   );
 }
 

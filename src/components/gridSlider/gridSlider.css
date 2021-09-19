@@ -24,7 +24,8 @@
   padding: 1em 3em;
 }
 
-.nav__slider {
+.nav__slider a {
+  text-decoration: none;
   color: #aecfdf;
 }
 

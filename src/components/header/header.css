@@ -46,3 +46,7 @@
 .dropDown__nav:hover > ul {
   display: block;
 }
+
+.list__nav {
+  text-decoration: none;
+}
