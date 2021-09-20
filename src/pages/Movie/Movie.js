@@ -11,7 +11,7 @@ export const Movie = () => {
 
     const history = useHistory();
     const data = history.location.state;
-
+    const [storedData, setStoredData] = useState(Object.values(localStorage));
     const [localKeys, setLocalKeys] = useState(Object.keys(localStorage));
     const [movies, setMovies] = useState([]);
     const api =`https://yts.mx/api/v2/movie_suggestions.json?movie_id=${data.id}`
@@ -27,14 +27,68 @@ export const Movie = () => {
         })
     }
 
+    const checkIsWatched = (id) => {
+        if (localKeys.includes((id).toString())) {
+            const storageData = localStorage.getItem(id);
+            const parsedData = JSON.parse(storageData);
+            if (parsedData.watched) {
+                return true
+            }else{
+                return false
+            }
+        }else{
+            return false
+        }           
+    }
+
+    const checkisWatchList = (id) => {
+        if (localKeys.includes((id).toString())) {
+            const storageData = localStorage.getItem(id);
+            const parsedData = JSON.parse(storageData);
+
+            if (parsedData.watchList) {
+                return true
+            }else{
+                return false
+            }
+        }else{
+            return false
+        }           
+    }
+
     const addToList = () => {
-        localStorage.setItem(+(data.id), JSON.stringify(data));
-        setLocalKeys(Object.keys(localStorage));
+        if (checkIsWatched(data.id)) {
+            const watchList = {watchList: true, watched: true}
+            const newData = {...data, ...watchList}
+            localStorage.setItem(+(data.id), JSON.stringify(newData));
+            setStoredData(Object.values(localStorage))
+        }else{
+            const watchList = {watchList: true}
+            const newData = {...data, ...watchList}
+            localStorage.setItem(+(data.id), JSON.stringify(newData));
+            setLocalKeys(Object.keys(localStorage));
+            setStoredData(Object.values(localStorage))
+        }
+    }
+
+    const markWatched = () => {
+        if (localKeys.includes((data.id).toString()) && checkisWatchList(data.id)) {
+            const watched = {watchList: true, watched: true}
+            const newData = {...data, ...watched}
+            localStorage.setItem(+(data.id), JSON.stringify(newData));
+            setStoredData(Object.values(localStorage))
+        } else {
+            const watched = {watched: true}
+            const newData = {...data, ...watched}
+            setLocalKeys(Object.keys(localStorage));
+            localStorage.setItem(+(data.id), JSON.stringify(newData));
+            setStoredData(Object.values(localStorage))
+        }
     }
 
     useEffect(()=>{
-        fetchMovie();
-    },[localKeys])
+       fetchMovie();
+    },[localKeys,storedData])
 
     
     return (
@@ -67,14 +121,15 @@ export const Movie = () => {
                         </ul>
                         <p>{data.description_full}</p>
 
-                        <div className="buttons__info">
-                            <button className="button" onClick={addToList}>
-                                { localKeys.includes((data.id).toString())? "Added to WatchList" : "Add to WatchList"}
+                         <div className="buttons__info">
+                                <button className="button" onClick={addToList}>
+                                    { checkisWatchList(data.id)? "Added to WatchList" : "Add to WatchList"}
+                                </button>
+                            
+                            <button className="button" onClick={markWatched}>
+                                { checkIsWatched(data.id)? "Watched" : "Mark as Watched"}
                             </button>
-                            {/* <button className="button">
-                                Mark as Watched
-                            </button> */}
-                        </div> 
+                        </div>
                     </div>      
                 </article>
 

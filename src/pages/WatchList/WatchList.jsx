@@ -27,7 +27,7 @@ export const WatchList = () => {
                     {   localStorage.length > 0 &&
                         storedData.map(item => {
                             const parsedData = JSON.parse(item);
-                            return (
+                            return ( parsedData.watchList &&
                                 <div key={parsedData.id}>
                                     <MovieCard movie={parsedData} watchList={true}/>                                    
                                 </div>
@@ -36,7 +36,7 @@ export const WatchList = () => {
                     }
 
                     {   localStorage.length === 0 &&
-                        <h2 className="error__watchList">Add movies to WatchList.</h2>
+                        <h2 className="message__watchList">Add movies to WatchList.</h2>
                     }
 
                 </div>

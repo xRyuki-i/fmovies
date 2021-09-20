@@ -1,8 +1,8 @@
 .watchList {
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .title__watchList {
@@ -12,13 +12,13 @@
 }
 
 .movies__watchList {
-  margin-top: 2em;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 2em;
   row-gap: 2em;
+  display: grid;
+  margin-top: 2em;
+  column-gap: 2em;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.error__watchlist {
-  color: crimson;
+.message__watchList {
+  color: white;
 }
