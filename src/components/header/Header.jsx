@@ -1,8 +1,11 @@
 import React from 'react'
 import './header.css';
 import {Link} from "react-router-dom"
+import { useHistory } from 'react-router';
 
 export const Header = () => {
+
+    const history = useHistory();
     return (
         <header className="header">
             <h1 className="logo__header">Fmovies.to</h1>
@@ -28,8 +31,8 @@ export const Header = () => {
                             </li>
                         </ul>
                     </li>
-                    <li className="list__nav">
-                        <Link to="./watchList">Watchlist</Link>
+                    <li className="list__nav" onClick={()=> history.push("/watchList")}>
+                        Watchlist
                     </li>
                 </ul>
             </nav>

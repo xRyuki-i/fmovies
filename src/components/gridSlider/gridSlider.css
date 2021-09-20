@@ -10,12 +10,7 @@
   width: 70em;
   column-gap: 2em;
   row-gap: 2em;
-  overflow-y: hidden;
   margin-top: 1em;
-}
-
-.grid__slider::-webkit-scrollbar {
-  display: none;
 }
 
 .interact__slider {
@@ -27,8 +22,17 @@
 .nav__slider a {
   text-decoration: none;
   color: #aecfdf;
+  margin-left: 1em;
 }
 
 .title__slider {
   font-size: 1.5em;
+}
+
+.navigation__button {
+  background: #35605a;
+  color: #aecfdf;
+  border: 1px solid #35605a;
+  margin: 0em 0.25em;
+  border-radius: 1px;
 }

@@ -44,7 +44,8 @@ export const Movie = () => {
             <section className="movie__wrapper">
                 <iframe 
                     src={`https://www.youtube.com/embed/${data.yt_trailer_code}`}
-                    frameborder="0"
+                    frameBorder="0"
+                    title="trailer"
                     className="trailer__movie">
                 </iframe>
 
@@ -59,8 +60,8 @@ export const Movie = () => {
                         <p>Rating : {data.rating}</p>
                         <p>Duration: {data.runtime}min</p>
                         <ul className="genre__detail">Genre: {
-                                (data.genres).map(genre => {
-                                    return <li className="list__genre">{genre}</li>
+                                (data.genres).map((genre, index) => {
+                                    return <li className="list__genre" key={index}>{genre}</li>
                                 })
                             }
                         </ul>
@@ -70,9 +71,9 @@ export const Movie = () => {
                             <button className="button" onClick={addToList}>
                                 { localKeys.includes((data.id).toString())? "Added to WatchList" : "Add to WatchList"}
                             </button>
-                            <button className="button">
+                            {/* <button className="button">
                                 Mark as Watched
-                            </button>
+                            </button> */}
                         </div> 
                     </div>      
                 </article>

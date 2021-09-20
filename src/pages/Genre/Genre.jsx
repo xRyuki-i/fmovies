@@ -37,8 +37,11 @@ export const Genre = () => {
                 <div className="content__wrapper">
                     {
                         movies.map(item=>{
-                            console.log(item);
-                            return < MovieCard movie={item} watchList={false}/>
+                            return (
+                                <div key={item.id}>
+                                    < MovieCard movie={item} watchList={false}/>
+                                </div>
+                            )
                         })
                     }
                 </div>

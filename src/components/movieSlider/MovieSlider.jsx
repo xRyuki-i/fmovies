@@ -45,13 +45,13 @@ export const MovieSlider = () => {
                 {
                     movies.map((item, index) => {
                         return (
-                            <div>
+                            <div key = {item.id}>
                                 {   index === current &&
                                     (
                                         <div 
                                             className="slide__movie"
                                             style={{backgroundImage: `url(${item.background_image})`}}
-                                            key = {index}
+                                            
                                         >
                                             <article className="detail__slide">
                                                 <h3>{item.title}</h3>

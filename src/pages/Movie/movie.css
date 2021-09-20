@@ -94,6 +94,7 @@ h3 {
 
 .download__movie {
   color: white;
+  border-radius: 5px;
 }
 
 .download__movie a {

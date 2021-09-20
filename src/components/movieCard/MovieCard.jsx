@@ -7,10 +7,9 @@ import { useState, useEffect } from 'react';
 export const MovieCard = ({movie, watchList}) => {
     
     const [localKeys, setLocalKeys] = useState(Object.keys(localStorage));
+    const [watched, setWatched] = useState([]);
     const history = useHistory(); 
     const data = movie;
-
-    // let localKeys = Object.keys(localStorage);
 
     const handleClick = () => {
         history.push("/movie", data)
@@ -21,9 +20,10 @@ export const MovieCard = ({movie, watchList}) => {
         setLocalKeys(Object.keys(localStorage));
     }
 
-    const markWatched = () => {
-        const id = data.id;
-    }
+    // const markWatched = () => {
+    //     setWatched([...watched, data.id]);
+    //     console.log(watched);
+    // }
 
     const removeFromList = () => {
         localStorage.removeItem((data.id));
@@ -57,9 +57,9 @@ export const MovieCard = ({movie, watchList}) => {
                         </button>
                     }
                     
-                    <button className="button__content" onClick={markWatched}>
+                    {/* <button className="button__content" onClick={markWatched}>
                         Mark as Watched
-                    </button>
+                    </button> */}
                 </div>
             </article>        
         </section> 
