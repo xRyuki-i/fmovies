@@ -1,32 +1,34 @@
 .slider {
-  margin: 2em 22.5em;
-  padding-left: 2em;
-  padding-top: 1em;
-  border-radius: 10px;
   display: flex;
+  padding-top: 1em;
+  padding-left: 2em;
+  margin: 2em 22.5em;
+  border-radius: 10px;
   flex-direction: column;
   background-color: #292929;
 }
 
 .grid__slider {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  width: 70em;
-  column-gap: 2em;
+
   row-gap: 2em;
+  column-gap: 2em;
+  grid-template-columns: repeat(10, 1fr);
+
+  width: 70em;
   margin-top: 1em;
 }
 
 .interact__slider {
   display: flex;
-  justify-content: flex-end;
   padding: 1em 3em;
+  justify-content: flex-end;
 }
 
 .nav__slider a {
-  text-decoration: none;
   color: #aecfdf;
   margin-left: 1em;
+  text-decoration: none;
 }
 
 .title__slider {
@@ -34,10 +36,10 @@
 }
 
 .navigation__button {
-  background: #35605a;
+  width: 3em;
   color: white;
-  border: 1px solid #35605a;
   margin: 0em 0.25em;
   border-radius: 1px;
-  width: 3em;
+  background: #35605a;
+  border: 1px solid #35605a;
 }

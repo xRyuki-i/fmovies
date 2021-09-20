@@ -1,6 +1,7 @@
 import React from 'react'
 import './watchList.css'
 import { Header } from '../../components/header/Header'
+import { Footer } from '../../components/footer/Footer';
 import { MovieCard } from '../../components/movieCard/MovieCard';
 import { useState, useEffect } from 'react'
 
@@ -16,7 +17,7 @@ export const WatchList = () => {
     },[storedData]);
 
     return (
-        <>
+        <div className="watchList__body">
             <Header />
 
             <section className="watchList">
@@ -41,6 +42,7 @@ export const WatchList = () => {
 
                 </div>
             </section>
-        </>
+            <Footer className="footer" />
+        </div>
     )
 }

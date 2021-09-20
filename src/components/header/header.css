@@ -5,25 +5,25 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  height: 1.2em;
+  color: #aecfdf;
   padding: 2em 5em;
   background-color: #050505;
-  color: #aecfdf;
-  height: 1.2em;
+  justify-content: space-between;
 }
 
 .nav__header {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   column-gap: 3em;
   list-style: none;
   font-size: 1.1em;
   font-weight: bold;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .header a {
-  text-decoration: none;
   color: #aecfdf;
+  text-decoration: none;
 }
 
 .list__nav a:hover {
@@ -31,13 +31,13 @@
 }
 
 .genre__dropDown {
-  list-style: none;
   display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  background: #050505;
+  list-style: none;
   margin-top: 1.8em;
   margin-left: -3em;
+  background: #050505;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .list__genre {

@@ -1,11 +1,12 @@
 .footer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em 5em;
-  background-color: #050505;
+  margin-top: auto;
   color: #aecfdf;
+  padding: 2em 5em;
   height: fit-content;
+  align-items: center;
+  flex-direction: column;
+  background-color: #050505;
 }
 
 .menu__footer {

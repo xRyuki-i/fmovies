@@ -1,3 +1,21 @@
+### Screenshots
+
+1. ### Landing Page
+
+![Home page](./Screenshots/home.png)
+
+2. ### Genre Page
+
+![Genre page](./Screenshots/genre.png)
+
+3. ### Movie Detail Page
+
+![Movie Detail Page](./Screenshots/movie.png)
+
+4. ### WatchList Page
+
+![WatchList page](./Screenshots/watchlist.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

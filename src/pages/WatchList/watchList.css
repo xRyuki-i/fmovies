@@ -1,8 +1,17 @@
+.watchList__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
 .watchList {
   width: 100%;
   display: flex;
+  margin-bottom: 2em;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .title__watchList {

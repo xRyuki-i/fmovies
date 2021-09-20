@@ -1,9 +1,9 @@
 .movie__slider {
-  margin: 2em 17em;
   display: grid;
-  grid-template-columns: 3.5em auto 3.5em;
-  column-gap: 2em;
   color: white;
+  column-gap: 2em;
+  margin: 2em 17em;
+  grid-template-columns: 3.5em auto 3.5em;
 }
 
 .slides__movie {
@@ -18,14 +18,14 @@
 }
 
 .genre__slide {
-  list-style: none;
   display: flex;
+  list-style: none;
 }
 
 .detail__slide {
   height: 100%;
-  padding: 0em 2em;
   display: flex;
+  padding: 0em 2em;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -37,7 +37,7 @@
 .button__slider {
   height: 5em;
   margin-top: 22.5em;
+  border-radius: 5px;
   background-color: #aecfdf;
   border: 1px solid #aecfdf;
-  border-radius: 5px;
 }
